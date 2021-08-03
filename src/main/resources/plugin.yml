@@ -1,0 +1,6 @@
+name: SelectiveSilkSpawners
+version: ${project.version}
+main: io.github.nhoj1000.selectivesilkspawners.SelectiveSilkSpawners
+api-version: 1.17
+authors: [ Nhoj1000 ]
+description: Allows players to only silk touch spawners that have been placed by players
