@@ -4,3 +4,7 @@ main: io.github.nhoj1000.selectivesilkspawners.SelectiveSilkSpawners
 api-version: 1.17
 authors: [ Nhoj1000 ]
 description: Allows players to only silk touch spawners that have been placed by players
+commands:
+  getSilkConverter:
+    description: Gives user a spawner converter stick
+    permission: selectivesilkspawners.convert

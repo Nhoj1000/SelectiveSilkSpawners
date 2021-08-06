@@ -1,5 +1,8 @@
 package io.github.nhoj1000.selectivesilkspawners;
 
+import io.github.nhoj1000.selectivesilkspawners.converterfunctions.GetConverter;
+import io.github.nhoj1000.selectivesilkspawners.converterfunctions.OnConverterClick;
+import io.github.nhoj1000.selectivesilkspawners.spawnerbreakevent.SpawnerBreakListeners;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
@@ -16,8 +19,12 @@ public final class SelectiveSilkSpawners extends JavaPlugin {
     @Override
     public void onEnable() {
         plugin = this;
-        // Plugin startup logic
+        getServer().getPluginManager().registerEvents(new OnSpawnerBreak(), this);
+        getServer().getPluginManager().registerEvents(new OnSpawnerPlace(), this);
+        getServer().getPluginManager().registerEvents(new SpawnerBreakListeners(), this);
+        getServer().getPluginManager().registerEvents(new OnConverterClick(), this);
 
+        getCommand("getSilkConverter").setExecutor(new GetConverter());
     }
 
     public static ItemStack getConverterTool(){

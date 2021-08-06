@@ -1,5 +1,6 @@
-package io.github.nhoj1000.selectivesilkspawners;
+package io.github.nhoj1000.selectivesilkspawners.converterfunctions;
 
+import io.github.nhoj1000.selectivesilkspawners.SelectiveSilkSpawners;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
