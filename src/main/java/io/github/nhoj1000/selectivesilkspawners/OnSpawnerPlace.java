@@ -10,7 +10,6 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
@@ -35,6 +34,7 @@ public class OnSpawnerPlace implements Listener {
             PersistentDataContainer mobContainer = e.getItemInHand().getItemMeta().getPersistentDataContainer();
             if(mobContainer.has(new NamespacedKey(plugin, "mobID"), PersistentDataType.STRING)) {
                 String mobID = mobContainer.get(new NamespacedKey(plugin, "mobID"), PersistentDataType.STRING);
+                System.out.println(mobID);
                 CreatureSpawner cs = (CreatureSpawner) state;
                 cs.setSpawnedType(EntityType.valueOf(mobID));
             }

@@ -24,12 +24,12 @@ public class SpawnerBreakListeners implements Listener {
 
         //sets item display name for aesthetics
         meta.setDisplayName(mob.name() + " Spawner");
-        spawnerToGive.setItemMeta(meta);
 
         //stores mob id in persistentdatacontainer
-        PersistentDataContainer mobStorage = spawnerToGive.getItemMeta().getPersistentDataContainer();
+        PersistentDataContainer mobStorage = meta.getPersistentDataContainer();
         mobStorage.set(new NamespacedKey(SelectiveSilkSpawners.getPlugin(), "mobID"), PersistentDataType.STRING, mob.name());
 
+        spawnerToGive.setItemMeta(meta);
         e.getBreaker().getInventory().addItem(spawnerToGive);
     }
 }
